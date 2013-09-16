@@ -1,0 +1,55 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          version="1.0">
+    <bindings schemaLocation="XeroSchemas/v2.00/Tracking.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>
+    <bindings schemaLocation="XeroSchemas/v2.00/ManualJournal.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>     
+    <bindings schemaLocation="XeroSchemas/v2.00/Account.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>
+    <bindings schemaLocation="XeroSchemas/v2.00/TaxRate.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>
+    <bindings schemaLocation="XeroSchemas/v2.00/CreditNote.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>
+    <bindings schemaLocation="XeroSchemas/v2.00/ExpenseClaim.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>
+    <bindings schemaLocation="XeroSchemas/v2.00/Invoice.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>    
+    <bindings schemaLocation="XeroSchemas/v2.00/Receipt.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>  
+    <bindings schemaLocation="XeroSchemas/v2.00/Employee.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>  
+    <bindings schemaLocation="XeroSchemas/v2.00/BankTransaction.xsd" version="1.0">
+	   <bindings multiple="true" node="//xs:attribute[@name='status']">
+	      <property name="ValidationStatus"/>
+	   </bindings>
+    </bindings>          
+</bindings>

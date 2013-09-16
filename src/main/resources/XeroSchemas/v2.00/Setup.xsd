@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="Setup" elementFormDefault="qualified">
+  <xs:include schemaLocation="BaseTypes.xsd"/>
+  <xs:include schemaLocation="CurrencyCode.xsd"/>
+  <xs:include schemaLocation="Address.xsd"/>
+  <xs:include schemaLocation="Account.xsd"/>
+  <xs:include schemaLocation="TaxRate.xsd"/>
+  <xs:include schemaLocation="Organisation.xsd"/>
+  <xs:include schemaLocation="Items.xsd"/>
+  <xs:include schemaLocation="Contact.xsd"/>
+  <xs:include schemaLocation="Invoice.xsd"/>
+
+  <xs:element name="Setup" nillable="true" type="SetupType"/>
+
+  <!--
+  Setup for conversions
+  -->
+  <xs:complexType name="SetupType">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="Organisation" type="Organisation" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Accounts" type="ArrayOfAccount"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxRates" type="ArrayOfTaxRate"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Contacts" type="ArrayOfContact"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Items" type="ArrayOfItem"/>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

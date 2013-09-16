@@ -1,0 +1,143 @@
+<!-- BEGIN_INCLUDE(xero:get-accounts-list) --> 
+	<xero:get-accounts-list/>
+<!-- END_INCLUDE(xero:get-accounts-list) -->
+ 
+<!-- BEGIN_INCLUDE(xero:get-bank-transactions-list) -->
+    <xero:get-bank-transactions-list/> 
+<!-- END_INCLUDE(xero:get-bank-transactions-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-branding-themes-list) -->
+    <xero:get-branding-themes-list/>
+<!-- END_INCLUDE(xero:get-branding-themes-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-contacts-list) -->
+    <xero:get-contacts-list/>
+<!-- END_INCLUDE(xero:get-contacts-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-contacts-list) -->
+    <xero:get-contacts-list/>
+<!-- END_INCLUDE(xero:get-contacts-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-credit-notes-list) -->
+    <xero:get-credit-notes-list/>
+<!-- END_INCLUDE(xero:get-credit-notes-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-currencies-list) -->
+    <xero:get-currencies-list/>
+<!-- END_INCLUDE(xero:get-currencies-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-employees-list) -->
+    <xero:get-employees-list/>
+<!-- END_INCLUDE(xero:get-employees-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-expense-claims-list) -->
+    <xero:get-expense-claims-list/>
+<!-- END_INCLUDE(xero:get-expense-claims-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-invoices-list) -->
+    <xero:get-invoices-list/>
+<!-- END_INCLUDE(xero:get-invoices-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-items-list) -->
+    <xero:get-items-list/>
+<!-- END_INCLUDE(xero:get-items-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-journals-list) -->
+    <xero:get-journals-list/>
+<!-- END_INCLUDE(xero:get-journals-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-manual-journals-list) -->
+    <xero:get-manual-journals-list/>
+<!-- END_INCLUDE(xero:get-manual-journals-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-payments-list) -->
+    <xero:get-payments-list/>
+<!-- END_INCLUDE(xero:get-payments-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-receipts-list) -->
+    <xero:get-receipts-list/>
+<!-- END_INCLUDE(xero:get-receipts-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-tracking-categories-list) -->
+    <xero:get-tracking-categories-list/>
+<!-- END_INCLUDE(xero:get-tracking-categories-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-users-list) -->
+    <xero:get-users-list/>
+<!-- END_INCLUDE(xero:get-users-list) -->
+
+<!-- BEGIN_INCLUDE(xero:get-account) -->
+    <xero:get-account accountId="ACCOUNT_ID"/>
+<!-- END_INCLUDE(xero:get-account) -->
+
+<!-- BEGIN_INCLUDE(xero:get-bank-transaction) -->
+    <xero:get-bank-transaction bankTransactionId="BANK_TRANSACTION_ID"/>
+<!-- END_INCLUDE(xero:get-bank-transaction) -->
+
+<!-- BEGIN_INCLUDE(xero:get-branding-theme) -->
+    <xero:get-branding-theme brandingThemeId="BRANDING_THEME_ID"/>
+<!-- END_INCLUDE(xero:get-branding-theme) -->
+
+<!-- BEGIN_INCLUDE(xero:get-contact) -->
+    <xero:get-contact contactId="CONTACT_ID"/>
+<!-- END_INCLUDE(xero:get-contact) -->
+
+<!-- BEGIN_INCLUDE(xero:get-credit-note) -->
+    <xero:get-credit-note creditNoteId="CREDIT_NOTE_ID"/>
+<!-- END_INCLUDE(xero:get-credit-note) -->
+
+<!-- BEGIN_INCLUDE(xero:get-employee) -->
+    <xero:get-employee employeeId="EMPLOYEE_ID"/>
+<!-- END_INCLUDE(xero:get-employee) -->
+
+<!-- BEGIN_INCLUDE(xero:get-expense-claim) -->
+    <xero:get-expense-claim expenseClaimId="EXPENSE_CLAIM_ID"/>
+<!-- END_INCLUDE(xero:get-expense-claim) -->
+
+<!-- BEGIN_INCLUDE(xero:get-invoice) -->
+    <xero:get-invoice invoiceId="INVOICE_ID"/>
+<!-- END_INCLUDE(xero:get-invoice) -->
+
+<!-- BEGIN_INCLUDE(xero:get-item) -->
+    <xero:get-item itemId="ITEM_ID"/>
+<!-- END_INCLUDE(xero:get-item) -->
+
+<!-- BEGIN_INCLUDE(xero:get-journal) -->
+    <xero:get-journal journalId="JOURNAL_ID"/>
+<!-- END_INCLUDE(xero:get-journal) -->
+
+<!-- BEGIN_INCLUDE(xero:get-manual-journal) -->
+    <xero:get-manual-journal manualJournalId="MANUAL_JOURNAL_ID"/>
+<!-- END_INCLUDE(xero:get-manual-journal) -->
+
+<!-- BEGIN_INCLUDE(xero:get-organisation) -->
+    <xero:get-organisation/>
+<!-- END_INCLUDE(xero:get-organisation) -->
+
+<!-- BEGIN_INCLUDE(xero:get-payment) -->
+    <xero:get-payment paymentId="PAYMENT_ID"/>
+<!-- END_INCLUDE(xero:get-payment) -->
+
+<!-- BEGIN_INCLUDE(xero:get-receipt) -->
+    <xero:get-receipt receiptId="RECEIPT_ID"/>
+<!-- END_INCLUDE(xero:get-receipt) -->
+
+<!-- BEGIN_INCLUDE(xero:get-tax-rates) -->
+    <xero:get-tax-rates/>
+<!-- END_INCLUDE(xero:get-tax-rates) -->
+
+<!-- BEGIN_INCLUDE(xero:get-tracking-category) -->
+    <xero:get-tracking-category trackingCategoryId="TRACKING_CATEGORY_ID"/>
+<!-- END_INCLUDE(xero:get-tracking-category) -->
+
+<!-- BEGIN_INCLUDE(xero:get-user) -->
+    <xero:get-user userId="USER_ID"/>
+<!-- END_INCLUDE(xero:get-user) -->
+
+<!-- BEGIN_INCLUDE(xero:create) -->
+    <xero:create objectType="Invoices" payload="XERO_XML_FRAGMENT"/>
+<!-- END_INCLUDE(xero:create) -->
+
+<!-- BEGIN_INCLUDE(xero:create-or-update) --> 
+    <xero:create-or-update objectType="Invoices" payload="XERO_XML_FRAGMENT"/> 
+<!-- END_INCLUDE(xero:create-or-update) -->

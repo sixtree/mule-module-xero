@@ -1,0 +1,11 @@
+*.ks
+*.jks
+*.pem
+*.log
+./**/*.properties
+target/
+.settings/
+.classpath
+.project
+
+src/test/resources/xero.properties

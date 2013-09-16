@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.tm-xml.org/XMLSchema/common"
+  version="1.0"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <!-- 
+  Timezones supported by Xero API.
+  Enumeration values are taken from Windows registry 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones' subkey names.
+  http://blogs.msdn.com/b/bclteam/archive/2007/06/07/exploring-windows-time-zones-with-system-timezoneinfo-josh-free.aspx
+  
+  Note: One timezone specification format for future consideration is the tzid format (e.g. 'Europe/Vienna'). This can be 
+  converted to the windows timezone format using http://unicode.org/repos/cldr/trunk/common/supplemental/windowsZones.xml
+  -->
+  <xs:simpleType name="timezoneCode">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Dateline Standard Time"><xs:annotation><xs:documentation>(UTC-12:00) International Date Line West</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="UTC-11"><xs:annotation><xs:documentation>(UTC-11:00) Coordinated Universal Time-11</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Hawaiian Standard Time"><xs:annotation><xs:documentation>(UTC-10:00) Hawaii</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Alaskan Standard Time"><xs:annotation><xs:documentation>(UTC-09:00) Alaska</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Pacific Standard Time (Mexico)"><xs:annotation><xs:documentation>(UTC-08:00) Baja California</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Pacific Standard Time"><xs:annotation><xs:documentation>(UTC-08:00) Pacific Time (US &amp; Canada)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Mountain Standard Time"><xs:annotation><xs:documentation>(UTC-07:00) Mountain Time (US &amp; Canada)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Mountain Standard Time (Mexico)"><xs:annotation><xs:documentation>(UTC-07:00) Chihuahua, La Paz, Mazatlan</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="US Mountain Standard Time"><xs:annotation><xs:documentation>(UTC-07:00) Arizona</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central America Standard Time"><xs:annotation><xs:documentation>(UTC-06:00) Central America</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Canada Central Standard Time"><xs:annotation><xs:documentation>(UTC-06:00) Saskatchewan</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Standard Time"><xs:annotation><xs:documentation>(UTC-06:00) Central Time (US &amp; Canada)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Standard Time (Mexico)"><xs:annotation><xs:documentation>(UTC-06:00) Guadalajara, Mexico City, Monterrey</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SA Pacific Standard Time"><xs:annotation><xs:documentation>(UTC-05:00) Bogota, Lima, Quito</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="US Eastern Standard Time"><xs:annotation><xs:documentation>(UTC-05:00) Indiana (East)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Eastern Standard Time"><xs:annotation><xs:documentation>(UTC-05:00) Eastern Time (US &amp; Canada)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Venezuela Standard Time"><xs:annotation><xs:documentation>(UTC-04:30) Caracas</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Paraguay Standard Time"><xs:annotation><xs:documentation>(UTC-04:00) Asuncion</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Pacific SA Standard Time"><xs:annotation><xs:documentation>(UTC-04:00) Santiago</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SA Western Standard Time"><xs:annotation><xs:documentation>(UTC-04:00) Georgetown, La Paz, Manaus, San Juan</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Brazilian Standard Time"><xs:annotation><xs:documentation>(UTC-04:00) Cuiaba</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Atlantic Standard Time"><xs:annotation><xs:documentation>(UTC-04:00) Atlantic Time (Canada)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Newfoundland Standard Time"><xs:annotation><xs:documentation>(UTC-03:30) Newfoundland</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SA Eastern Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Cayenne, Fortaleza</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Montevideo Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Montevideo</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Argentina Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Buenos Aires</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Bahia Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Salvador</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Greenland Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Greenland</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="E. South America Standard Time"><xs:annotation><xs:documentation>(UTC-03:00) Brasilia</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Mid-Atlantic Standard Time"><xs:annotation><xs:documentation>(UTC-02:00) Mid-Atlantic</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="UTC-02"><xs:annotation><xs:documentation>(UTC-02:00) Coordinated Universal Time-02</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Cape Verde Standard Time"><xs:annotation><xs:documentation>(UTC-01:00) Cape Verde Is.</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Azores Standard Time"><xs:annotation><xs:documentation>(UTC-01:00) Azores</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Morocco Standard Time"><xs:annotation><xs:documentation>(UTC) Casablanca</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="UTC"><xs:annotation><xs:documentation>(UTC) Coordinated Universal Time</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Greenwich Standard Time"><xs:annotation><xs:documentation>(UTC) Monrovia, Reykjavik</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="GMT Standard Time"><xs:annotation><xs:documentation>(UTC) Dublin, Edinburgh, Lisbon, London</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Romance Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Namibia Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) Windhoek</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="W. Central Africa Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) West Central Africa</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="W. Europe Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Europe Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central European Standard Time"><xs:annotation><xs:documentation>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Middle East Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Beirut</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Syria Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Damascus</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="South Africa Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Harare, Pretoria</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Turkey Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Istanbul</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="GTB Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Athens, Bucharest</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Israel Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Jerusalem</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Jordan Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Amman</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="E. Europe Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Nicosia</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="FLE Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Egypt Standard Time"><xs:annotation><xs:documentation>(UTC+02:00) Cairo</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Arabic Standard Time"><xs:annotation><xs:documentation>(UTC+03:00) Baghdad</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Arab Standard Time"><xs:annotation><xs:documentation>(UTC+03:00) Kuwait, Riyadh</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Kaliningrad Standard Time"><xs:annotation><xs:documentation>(UTC+03:00) Kaliningrad, Minsk</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="E. Africa Standard Time"><xs:annotation><xs:documentation>(UTC+03:00) Nairobi</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Iran Standard Time"><xs:annotation><xs:documentation>(UTC+03:30) Tehran</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Russian Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Moscow, St. Petersburg, Volgograd</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Mauritius Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Port Louis</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Caucasus Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Yerevan</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Arabian Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Abu Dhabi, Muscat</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Azerbaijan Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Baku</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Georgian Standard Time"><xs:annotation><xs:documentation>(UTC+04:00) Tbilisi</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Afghanistan Standard Time"><xs:annotation><xs:documentation>(UTC+04:30) Kabul</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Pakistan Standard Time"><xs:annotation><xs:documentation>(UTC+05:00) Islamabad, Karachi</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="West Asia Standard Time"><xs:annotation><xs:documentation>(UTC+05:00) Tashkent</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Sri Lanka Standard Time"><xs:annotation><xs:documentation>(UTC+05:30) Sri Jayawardenepura</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="India Standard Time"><xs:annotation><xs:documentation>(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Nepal Standard Time"><xs:annotation><xs:documentation>(UTC+05:45) Kathmandu</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Asia Standard Time"><xs:annotation><xs:documentation>(UTC+06:00) Astana</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Bangladesh Standard Time"><xs:annotation><xs:documentation>(UTC+06:00) Dhaka</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Ekaterinburg Standard Time"><xs:annotation><xs:documentation>(UTC+06:00) Ekaterinburg</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Myanmar Standard Time"><xs:annotation><xs:documentation>(UTC+06:30) Yangon (Rangoon)</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="N. Central Asia Standard Time"><xs:annotation><xs:documentation>(UTC+07:00) Novosibirsk</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="SE Asia Standard Time"><xs:annotation><xs:documentation>(UTC+07:00) Bangkok, Hanoi, Jakarta</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="North Asia Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Krasnoyarsk</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="W. Australia Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Perth</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Taipei Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Taipei</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Singapore Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Kuala Lumpur, Singapore</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Ulaanbaatar Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Ulaanbaatar</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="China Standard Time"><xs:annotation><xs:documentation>(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="North Asia East Standard Time"><xs:annotation><xs:documentation>(UTC+09:00) Irkutsk</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Tokyo Standard Time"><xs:annotation><xs:documentation>(UTC+09:00) Osaka, Sapporo, Tokyo</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Korea Standard Time"><xs:annotation><xs:documentation>(UTC+09:00) Seoul</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Cen. Australia Standard Time"><xs:annotation><xs:documentation>(UTC+09:30) Adelaide</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="AUS Central Standard Time"><xs:annotation><xs:documentation>(UTC+09:30) Darwin</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="West Pacific Standard Time"><xs:annotation><xs:documentation>(UTC+10:00) Guam, Port Moresby</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Yakutsk Standard Time"><xs:annotation><xs:documentation>(UTC+10:00) Yakutsk</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Tasmania Standard Time"><xs:annotation><xs:documentation>(UTC+10:00) Hobart</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="AUS Eastern Standard Time"><xs:annotation><xs:documentation>(UTC+10:00) Canberra, Melbourne, Sydney</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="E. Australia Standard Time"><xs:annotation><xs:documentation>(UTC+10:00) Brisbane</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Vladivostok Standard Time"><xs:annotation><xs:documentation>(UTC+11:00) Vladivostok</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Central Pacific Standard Time"><xs:annotation><xs:documentation>(UTC+11:00) Solomon Is., New Caledonia</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="New Zealand Standard Time"><xs:annotation><xs:documentation>(UTC+12:00) Auckland, Wellington</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="UTC+12"><xs:annotation><xs:documentation>(UTC+12:00) Coordinated Universal Time+12</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Kamchatka Standard Time"><xs:annotation><xs:documentation>(UTC+12:00) Petropavlovsk-Kamchatsky - Old</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Magadan Standard Time"><xs:annotation><xs:documentation>(UTC+12:00) Magadan</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Fiji Standard Time"><xs:annotation><xs:documentation>(UTC+12:00) Fiji</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Samoa Standard Time"><xs:annotation><xs:documentation>(UTC+13:00) Samoa</xs:documentation></xs:annotation></xs:enumeration>
+      <xs:enumeration value="Tonga Standard Time"><xs:annotation><xs:documentation>(UTC+13:00) Nuku'alofa</xs:documentation></xs:annotation></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

@@ -1,0 +1,1 @@
+xjc -nv -d src/main/java -p au.com.sixtree.mule.modules.xero.xsd -b src/main/resources/xero-bindings.xjb src/main/resources/XeroSchemas/v2.00
