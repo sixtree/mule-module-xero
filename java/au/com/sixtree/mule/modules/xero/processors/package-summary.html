@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Xero Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.ico" />
+<title>
+
+  au.com.sixtree.mule.modules.xero.processors
+
+
+| Mule Xero Connector
+
+</title>
+<link href="../../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Xero Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Xero Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    
+    	<li id="guide"><a href="../../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/package-summary.html">au.com.sixtree.mule.modules.xero</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/adapter/package-summary.html">au.com.sixtree.mule.modules.xero.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/adapters/package-summary.html">au.com.sixtree.mule.modules.xero.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/agents/package-summary.html">au.com.sixtree.mule.modules.xero.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/basic/package-summary.html">au.com.sixtree.mule.modules.xero.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/callback/package-summary.html">au.com.sixtree.mule.modules.xero.callback</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/config/package-summary.html">au.com.sixtree.mule.modules.xero.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/connection/package-summary.html">au.com.sixtree.mule.modules.xero.connection</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/devkit/package-summary.html">au.com.sixtree.mule.modules.xero.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/oauth/package-summary.html">au.com.sixtree.mule.modules.xero.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/process/package-summary.html">au.com.sixtree.mule.modules.xero.process</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/package-summary.html">au.com.sixtree.mule.modules.xero.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/transformers/package-summary.html">au.com.sixtree.mule.modules.xero.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractExpressionEvaluator.html">AbstractExpressionEvaluator</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractListeningMessageProcessor.html">AbstractListeningMessageProcessor</a>&lt;O&gt;</li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractMessageProcessor.html">AbstractMessageProcessor</a>&lt;O&gt;</li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/CreateMessageProcessor.html">CreateMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/CreateOrUpdateMessageProcessor.html">CreateOrUpdateMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetAccountMessageProcessor.html">GetAccountMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetAccountsListMessageProcessor.html">GetAccountsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBankTransactionMessageProcessor.html">GetBankTransactionMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBankTransactionsListMessageProcessor.html">GetBankTransactionsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBrandingThemeMessageProcessor.html">GetBrandingThemeMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBrandingThemesListMessageProcessor.html">GetBrandingThemesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetContactMessageProcessor.html">GetContactMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetContactsListMessageProcessor.html">GetContactsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCreditNoteMessageProcessor.html">GetCreditNoteMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCreditNotesListMessageProcessor.html">GetCreditNotesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCurrenciesListMessageProcessor.html">GetCurrenciesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetEmployeeMessageProcessor.html">GetEmployeeMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetEmployeesListMessageProcessor.html">GetEmployeesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetExpenseClaimMessageProcessor.html">GetExpenseClaimMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetExpenseClaimsListMessageProcessor.html">GetExpenseClaimsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetInvoiceMessageProcessor.html">GetInvoiceMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetInvoicesListMessageProcessor.html">GetInvoicesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetItemMessageProcessor.html">GetItemMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetItemsListMessageProcessor.html">GetItemsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetJournalMessageProcessor.html">GetJournalMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetJournalsListMessageProcessor.html">GetJournalsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetManualJournalMessageProcessor.html">GetManualJournalMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetManualJournalsListMessageProcessor.html">GetManualJournalsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetOrganisationMessageProcessor.html">GetOrganisationMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetPaymentMessageProcessor.html">GetPaymentMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetPaymentsListMessageProcessor.html">GetPaymentsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetReceiptMessageProcessor.html">GetReceiptMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetReceiptsListMessageProcessor.html">GetReceiptsListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTaxRatesMessageProcessor.html">GetTaxRatesMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTrackingCategoriesListMessageProcessor.html">GetTrackingCategoriesListMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTrackingCategoryMessageProcessor.html">GetTrackingCategoryMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetUserMessageProcessor.html">GetUserMessageProcessor</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetUsersListMessageProcessor.html">GetUsersListMessageProcessor</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>au.com.sixtree.mule.modules.xero.processors</h1>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+
+
+
+
+
+
+  
+
+
+  
+    <h2>Classes</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractExpressionEvaluator.html">AbstractExpressionEvaluator</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractListeningMessageProcessor.html">AbstractListeningMessageProcessor</a>&lt;O&gt;</td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/AbstractMessageProcessor.html">AbstractMessageProcessor</a>&lt;O&gt;</td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/CreateMessageProcessor.html">CreateMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">CreateMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#create(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPutTypes, java.lang.String)">create(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPutTypes, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/CreateOrUpdateMessageProcessor.html">CreateOrUpdateMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">CreateOrUpdateMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#createOrUpdate(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPostTypes, java.lang.String)">createOrUpdate(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPostTypes, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetAccountMessageProcessor.html">GetAccountMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetAccountMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getAccount(java.lang.String)">getAccount(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetAccountsListMessageProcessor.html">GetAccountsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetAccountsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getAccountsList(java.lang.String, java.lang.String)">getAccountsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBankTransactionMessageProcessor.html">GetBankTransactionMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetBankTransactionMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getBankTransaction(java.lang.String)">getBankTransaction(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBankTransactionsListMessageProcessor.html">GetBankTransactionsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetBankTransactionsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getBankTransactionsList(java.lang.String, java.lang.String)">getBankTransactionsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBrandingThemeMessageProcessor.html">GetBrandingThemeMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetBrandingThemeMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getBrandingTheme(java.lang.String)">getBrandingTheme(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetBrandingThemesListMessageProcessor.html">GetBrandingThemesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetBrandingThemesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getBrandingThemesList(java.lang.String, java.lang.String)">getBrandingThemesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetContactMessageProcessor.html">GetContactMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetContactMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getContact(java.lang.String)">getContact(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetContactsListMessageProcessor.html">GetContactsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetContactsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getContactsList(java.lang.String, java.lang.String)">getContactsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCreditNoteMessageProcessor.html">GetCreditNoteMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetCreditNoteMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getCreditNote(java.lang.String)">getCreditNote(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCreditNotesListMessageProcessor.html">GetCreditNotesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetCreditNotesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getCreditNotesList(java.lang.String, java.lang.String)">getCreditNotesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetCurrenciesListMessageProcessor.html">GetCurrenciesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetCurrenciesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getCurrenciesList(java.lang.String, java.lang.String)">getCurrenciesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetEmployeeMessageProcessor.html">GetEmployeeMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetEmployeeMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getEmployee(java.lang.String)">getEmployee(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetEmployeesListMessageProcessor.html">GetEmployeesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetEmployeesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getEmployeesList(java.lang.String, java.lang.String)">getEmployeesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetExpenseClaimMessageProcessor.html">GetExpenseClaimMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetExpenseClaimMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getExpenseClaim(java.lang.String)">getExpenseClaim(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetExpenseClaimsListMessageProcessor.html">GetExpenseClaimsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetExpenseClaimsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getExpenseClaimsList(java.lang.String, java.lang.String)">getExpenseClaimsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetInvoiceMessageProcessor.html">GetInvoiceMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetInvoiceMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getInvoice(java.lang.String)">getInvoice(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetInvoicesListMessageProcessor.html">GetInvoicesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetInvoicesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getInvoicesList(java.lang.String, java.lang.String)">getInvoicesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetItemMessageProcessor.html">GetItemMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetItemMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getItem(java.lang.String)">getItem(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetItemsListMessageProcessor.html">GetItemsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetItemsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getItemsList(java.lang.String, java.lang.String)">getItemsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetJournalMessageProcessor.html">GetJournalMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetJournalMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getJournal(java.lang.String)">getJournal(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetJournalsListMessageProcessor.html">GetJournalsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetJournalsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getJournalsList(java.lang.String, java.lang.String)">getJournalsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetManualJournalMessageProcessor.html">GetManualJournalMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetManualJournalMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getManualJournal(java.lang.String)">getManualJournal(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetManualJournalsListMessageProcessor.html">GetManualJournalsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetManualJournalsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getManualJournalsList(java.lang.String, java.lang.String)">getManualJournalsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetOrganisationMessageProcessor.html">GetOrganisationMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetOrganisationMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getOrganisation()">getOrganisation()</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetPaymentMessageProcessor.html">GetPaymentMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetPaymentMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getPayment(java.lang.String)">getPayment(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetPaymentsListMessageProcessor.html">GetPaymentsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetPaymentsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getPaymentsList(java.lang.String, java.lang.String)">getPaymentsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetReceiptMessageProcessor.html">GetReceiptMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetReceiptMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getReceipt(java.lang.String)">getReceipt(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetReceiptsListMessageProcessor.html">GetReceiptsListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetReceiptsListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getReceiptsList(java.lang.String, java.lang.String)">getReceiptsList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTaxRatesMessageProcessor.html">GetTaxRatesMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetTaxRatesMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getTaxRates()">getTaxRates()</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTrackingCategoriesListMessageProcessor.html">GetTrackingCategoriesListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetTrackingCategoriesListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getTrackingCategoriesList(java.lang.String, java.lang.String)">getTrackingCategoriesList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetTrackingCategoryMessageProcessor.html">GetTrackingCategoryMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetTrackingCategoryMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getTrackingCategory(java.lang.String)">getTrackingCategory(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetUserMessageProcessor.html">GetUserMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetUserMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getUser(java.lang.String)">getUser(java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/GetUsersListMessageProcessor.html">GetUsersListMessageProcessor</a></td>
+              <td class="jd-descrcol" width="100%">GetUsersListMessageProcessor invokes the <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html#getUsersList(java.lang.String, java.lang.String)">getUsersList(java.lang.String, java.lang.String)</a></code> method in <code><a href="../../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></code>.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

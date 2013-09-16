@@ -1,0 +1,14 @@
+au.com.sixtree.mule.modules.xero
+au.com.sixtree.mule.modules.xero.adapter
+au.com.sixtree.mule.modules.xero.adapters
+au.com.sixtree.mule.modules.xero.agents
+au.com.sixtree.mule.modules.xero.basic
+au.com.sixtree.mule.modules.xero.callback
+au.com.sixtree.mule.modules.xero.config
+au.com.sixtree.mule.modules.xero.connection
+au.com.sixtree.mule.modules.xero.devkit
+au.com.sixtree.mule.modules.xero.oauth
+au.com.sixtree.mule.modules.xero.process
+au.com.sixtree.mule.modules.xero.processors
+au.com.sixtree.mule.modules.xero.transformers
+

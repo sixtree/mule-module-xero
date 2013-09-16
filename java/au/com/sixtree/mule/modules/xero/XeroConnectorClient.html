@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Xero Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  XeroConnectorClient
+
+
+| Mule Xero Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Xero Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Xero Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/package-summary.html">au.com.sixtree.mule.modules.xero</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/adapter/package-summary.html">au.com.sixtree.mule.modules.xero.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/adapters/package-summary.html">au.com.sixtree.mule.modules.xero.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/agents/package-summary.html">au.com.sixtree.mule.modules.xero.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/basic/package-summary.html">au.com.sixtree.mule.modules.xero.basic</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/callback/package-summary.html">au.com.sixtree.mule.modules.xero.callback</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/config/package-summary.html">au.com.sixtree.mule.modules.xero.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/connection/package-summary.html">au.com.sixtree.mule.modules.xero.connection</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/devkit/package-summary.html">au.com.sixtree.mule.modules.xero.devkit</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/oauth/package-summary.html">au.com.sixtree.mule.modules.xero.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/process/package-summary.html">au.com.sixtree.mule.modules.xero.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/processors/package-summary.html">au.com.sixtree.mule.modules.xero.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/transformers/package-summary.html">au.com.sixtree.mule.modules.xero.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnector.html">XeroConnector</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClient.html">XeroConnectorClient</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.html">XeroObjectTypes</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroAllTypes.html">XeroObjectTypes.XeroAllTypes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroGetTypes.html">XeroObjectTypes.XeroGetTypes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPostTypes.html">XeroObjectTypes.XeroPostTypes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPutTypes.html">XeroObjectTypes.XeroPutTypes</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>XeroConnectorClient</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">au.com.sixtree.mule.modules.xero.XeroConnectorClient</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>A helper class which encapsulates client logic (connection & 
+ authentication) for comms to Xero.  </p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#consumerKey">consumerKey</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#consumerSecret">consumerSecret</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#privateKeyFile">privateKeyFile</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#xeroApiUrl">xeroApiUrl</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#XeroConnectorClient(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">XeroConnectorClient</a></span>(String xeroApiUrl, String consumerKey, String consumerSecret, String privateKeyFile)</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Collection&lt;OAuth.Parameter&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#addRequestParams(java.lang.String, java.lang.String)">addRequestParams</a></span>(String whereClause, String orderClause)</nobr>
+        
+        <div class="jd-descrdiv">addRequestParams adds additional parmeters to the API request</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#buildRequestUri(java.lang.String)">buildRequestUri</a></span>(String objectType)</nobr>
+        
+        <div class="jd-descrdiv">buildRequestUri builds the full target URI for the Xero request to be directed to</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            OAuthAccessor</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#createOAuthAccessor()">createOAuthAccessor</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">createOAuthAccessor sets up the OAuth accessor credentials to be passed in all requests to the Xero API</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#createXeroObject(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPutTypes, java.lang.String)">createXeroObject</a></span>(<a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPutTypes.html">XeroObjectTypes.XeroPutTypes</a> objectType, String payload)</nobr>
+        
+        <div class="jd-descrdiv">createXeroObject method creates a xero object based on the given 'objectType' and 'payload' parameters.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#getXeroObject(java.lang.String)">getXeroObject</a></span>(String objectType)</nobr>
+        
+        <div class="jd-descrdiv">getXeroObject method retrieves an individual xero object based on the given 'objectType' parameter</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#getXeroObject(java.lang.String, java.lang.String)">getXeroObject</a></span>(String objectType, String objectId)</nobr>
+        
+        <div class="jd-descrdiv">getXeroObject method retrieves an individual xero object based on the given 'objectType' parameter.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#getXeroObjectList(java.lang.String, java.lang.String, java.lang.String)">getXeroObjectList</a></span>(String objectType, String whereClause, String orderClause)</nobr>
+        
+        <div class="jd-descrdiv">getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#getXeroObjectList(java.lang.String, java.lang.String)">getXeroObjectList</a></span>(String objectType, String whereClause)</nobr>
+        
+        <div class="jd-descrdiv">getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#getXeroObjectList(java.lang.String)">getXeroObjectList</a></span>(String objectType)</nobr>
+        
+        <div class="jd-descrdiv">getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../au/com/sixtree/mule/modules/xero/XeroConnectorClient.html#updateXeroObject(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPostTypes, java.lang.String)">updateXeroObject</a></span>(<a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPostTypes.html">XeroObjectTypes.XeroPostTypes</a> objectType, String payload)</nobr>
+        
+        <div class="jd-descrdiv">updateXeroObject method updates a xero object based on the given 'objectType' and 'payload' parameters.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="consumerKey"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        consumerKey
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="consumerSecret"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        consumerSecret
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="privateKeyFile"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        privateKeyFile
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="xeroApiUrl"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        xeroApiUrl
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="XeroConnectorClient(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">XeroConnectorClient</span>
+      <span class="normal">(String xeroApiUrl, String consumerKey, String consumerSecret, String privateKeyFile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>xeroApiUrl</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>consumerKey</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>consumerSecret</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>privateKeyFile</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addRequestParams(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Collection&lt;OAuth.Parameter&gt;
+      </span>
+      <span class="sympad">addRequestParams</span>
+      <span class="normal">(String whereClause, String orderClause)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>addRequestParams adds additional parmeters to the API request</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>whereClause</td>
+          <td>Value of the 'where' parameter to be added to the request URI</td>
+        </tr>
+        <tr>
+          <th>orderClause</td>
+          <td>Value of the 'order' parameter to be added to the request URI</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>parameters list
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="buildRequestUri(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">buildRequestUri</span>
+      <span class="normal">(String objectType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>buildRequestUri builds the full target URI for the Xero request to be directed to</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>To be appended to the base Xero API URI</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>full Xero API URI
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createOAuthAccessor()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        OAuthAccessor
+      </span>
+      <span class="sympad">createOAuthAccessor</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>createOAuthAccessor sets up the OAuth accessor credentials to be passed in all requests to the Xero API</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>an OAuth accessor with required Xero access credentials set</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createXeroObject(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPutTypes, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">createXeroObject</span>
+      <span class="normal">(<a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPutTypes.html">XeroObjectTypes.XeroPutTypes</a> objectType, String payload)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>createXeroObject method creates a xero object based on the given 'objectType' and 'payload' parameters. </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+        <tr>
+          <th>payload</td>
+          <td>Xml string request payload</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getXeroObject(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getXeroObject</span>
+      <span class="normal">(String objectType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>getXeroObject method retrieves an individual xero object based on the given 'objectType' parameter</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getXeroObject(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getXeroObject</span>
+      <span class="normal">(String objectType, String objectId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>getXeroObject method retrieves an individual xero object based on the given 'objectType' parameter. Method overloaded to allow:
+ 	- an optional 'objectId' field to identify a unique Xero object</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+        <tr>
+          <th>objectId</td>
+          <td>Unique Xero object identifier</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getXeroObjectList(java.lang.String, java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getXeroObjectList</span>
+      <span class="normal">(String objectType, String whereClause, String orderClause)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter. Method overloaded to allow: 
+ 	- an optional 'where' clause to be passed for filtering of the response list
+ 	- an optional 'order' clause for ordering the response list</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+        <tr>
+          <th>whereClause</td>
+          <td>A 'where' clause passed for filtering of the response list </td>
+        </tr>
+        <tr>
+          <th>orderClause</td>
+          <td>An 'order' clause for ordering the response list</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getXeroObjectList(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getXeroObjectList</span>
+      <span class="normal">(String objectType, String whereClause)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter. Method overloaded to allow: 
+ 	- an optional 'where' clause to be passed for filtering of the response list</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+        <tr>
+          <th>whereClause</td>
+          <td>A 'where' clause passed for filtering of the response list </td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getXeroObjectList(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getXeroObjectList</span>
+      <span class="normal">(String objectType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>getXeroObjectList retrieves a list of xero objects based on the 'objectType' parameter</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateXeroObject(au.com.sixtree.mule.modules.xero.XeroObjectTypes.XeroPostTypes, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">updateXeroObject</span>
+      <span class="normal">(<a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroObjectTypes.XeroPostTypes.html">XeroObjectTypes.XeroPostTypes</a> objectType, String payload)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>updateXeroObject method updates a xero object based on the given 'objectType' and 'payload' parameters. </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>objectType</td>
+          <td>The Xero object type</td>
+        </tr>
+        <tr>
+          <th>payload</td>
+          <td>Xml string request payload</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Xero xml response string</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientException.html">XeroConnectorClientException</a></td>
+            <td>if an error is returned from the Xero API</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/au/com/sixtree/mule/modules/xero/XeroConnectorClientUnexpectedException.html">XeroConnectorClientUnexpectedException</a></td>
+            <td>if an unexpected exception occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>
