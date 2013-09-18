@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:xero="http://www.mulesoft.org/schema/mule/xero" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/xero http://www.mulesoft.org/schema/mule/xero/1.0/mule-xero.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd">
+
+	<!-- note that the properties referenced here need to be defined in (usually) mule-app.properties -->
+    <xero:config name="Xero" consumerKey="${xero.consumerKey}" consumerSecret="${xero.consumerSecret}" privateKeyFile="${xero.privateKeyFile}" doc:name="Xero" xeroApiUrl="${xero.xeroApiUrl}"/>
+        
+    <!-- register the JAXB context -->
+	<mulexml:jaxb-context name="xeroJaxb" packageNames="au.com.sixtree.mule.modules.xero.xsd"/>
+	
+	<!-- allows for service overrides and cookie support if needed -->
+    <http:connector name="HTTP" enableCookies="true" cookieSpec="netscape" validateConnections="true" sendBufferSize="0" receiveBufferSize="0" receiveBacklog="0" clientSoTimeout="10000" serverSoTimeout="10000" socketSoLinger="0" doc:name="HTTP\HTTPS">
+    	<service-overrides sessionHandler="org.mule.session.NullSessionHandler"/>
+    </http:connector>
+    
+    <!-- a wrapper over the main Xero API that exposes some operations more simply and using JSON  -->
+    <flow name="xero" doc:name="xero">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${app.port}" doc:name="HTTP" path="xero">
+        	<response>
+        		<json:object-to-json-transformer doc:name="Object to JSON"/>
+        	</response>
+        </http:inbound-endpoint>
+        <choice doc:name="Choice">
+            <when expression="message.inboundProperties['http.relative.path'] == 'customers'">
+                <flow-ref name="xero-getCustomers" doc:name="Get Customers"/>
+            </when>
+            <when expression="message.inboundProperties['http.relative.path'] == 'invoices'">
+            	<flow-ref name="xero-getInvoicesForCustomer" doc:name="Get Invoices for Customer"/>
+            </when>
+        	<when expression="message.inboundProperties['http.relative.path'] == 'invoice/new'">
+            	<flow-ref name="xero-createInvoice" doc:name="Create Invoice"/>
+            </when>
+			<when expression="message.inboundProperties['http.relative.path'] == 'invoice'">
+            	<flow-ref name="xero-getInvoice" doc:name="Get Invoice"/>
+            </when>
+           	<when expression="message.inboundProperties['http.relative.path'] == 'items/sale'">
+           		<flow-ref name="xero-getSaleItems" doc:name="Get Items for Sale"/>
+            </when>
+            <otherwise>
+            	<expression-transformer expression="#[['error': 'Unknown path']]" doc:name="Expression"/>
+            </otherwise>
+        </choice>
+        <expression-transformer expression="#[sessionVars['apiException'] == null ? message.payload : sessionVars['apiException']]" doc:name="Restore Exception if Possible" returnSourceIfNull="true"/>
+    </flow>
+    <sub-flow name="xero-getCustomers" doc:name="xero-getCustomers">
+        <xero:get-contacts-list config-ref="Xero" whereClause="IsCustomer == true AND ContactStatus == &quot;ACTIVE&quot;" doc:name="Xero"/>
+        <message-filter doc:name="Drop Exceptions" onUnaccepted="droppedMessageFlow">
+            <expression-filter expression="#[xpath('/ApiException') == null]" />
+        </message-filter>        
+        <auto-transformer returnClass="au.com.sixtree.mule.modules.xero.xsd.ResponseType"></auto-transformer>
+        <expression-transformer expression="#[([
+&quot;contactID&quot;: $.contactID, 
+&quot;name&quot;: $.name
+] in payload.contacts.contact)]" doc:name="Expression"/>
+    </sub-flow>
+    <sub-flow name="xero-getInvoicesForCustomer" doc:name="xero-getInvoicesForCustomer">
+        <xero:get-invoices-list config-ref="Xero" whereClause="Contact.ContactID == Guid(&quot;#[header:inbound:contactID]&quot;) AND Type == &quot;ACCREC&quot; AND Status != &quot;DELETED&quot;" doc:name="Xero"/>
+        <message-filter doc:name="Drop Exceptions" onUnaccepted="droppedMessageFlow">
+            <expression-filter expression="#[xpath('/ApiException') == null]" />
+        </message-filter>        
+        <auto-transformer returnClass="au.com.sixtree.mule.modules.xero.xsd.ResponseType"></auto-transformer>
+        <expression-transformer expression="#[
+([
+&quot;invoiceID&quot;: $.invoiceID, 
+&quot;invoiceNumber&quot;: $.invoiceNumber,
+&quot;status&quot;: $.status,
+&quot;reference&quot;: $.reference,
+&quot;date&quot;: $.date
+] in (payload.?invoices != null ? payload.invoices.invoice : []));
+]" doc:name="Expression"/>
+    </sub-flow>
+    <sub-flow name="xero-getInvoice" doc:name="xero-getInvoice">
+        <xero:get-invoice config-ref="Xero"  doc:name="Xero" invoiceId="#[header:inbound:invoiceNumber]"/>
+        <message-filter doc:name="Drop Exceptions" onUnaccepted="droppedMessageFlow">
+            <expression-filter expression="#[xpath('/ApiException') == null]" />
+        </message-filter>        
+        <auto-transformer returnClass="au.com.sixtree.mule.modules.xero.xsd.ResponseType"></auto-transformer>
+        <expression-transformer expression="#[
+invoice = payload.invoices.invoice[0];
+[
+&quot;invoiceID&quot;: invoice.invoiceID, 
+&quot;invoiceNumber&quot;: invoice.invoiceNumber,
+&quot;status&quot;: invoice.status,
+&quot;date&quot;: invoice.date,
+&quot;reference&quot;: invoice.reference,
+&quot;lineItems&quot;:
+    ([
+    &quot;description&quot;: $.description, 
+    &quot;unitAmount&quot;: $.unitAmount,
+    &quot;itemCode&quot;: $.itemCode,
+    &quot;accountCode&quot;: $.accountCode
+    ] in invoice.lineItems.lineItem)
+]
+]" doc:name="Expression"/>
+    </sub-flow>
+    <sub-flow name="xero-createInvoice" doc:name="xero-createInvoice">
+        <json:json-to-xml-transformer doc:name="JSON to XML"/>
+        <xero:create config-ref="Xero" objectType="Invoices" doc:name="Xero"/>
+        <message-filter doc:name="Drop Exceptions" onUnaccepted="droppedMessageFlow">
+            <expression-filter expression="#[xpath('/ApiException') == null]" />
+        </message-filter>
+        <auto-transformer returnClass="au.com.sixtree.mule.modules.xero.xsd.ResponseType"></auto-transformer>
+        <expression-transformer expression="#[
+invoice = payload.invoices.invoice[0];
+[
+&quot;invoiceID&quot;: invoice.invoiceID, 
+&quot;invoiceNumber&quot;: invoice.invoiceNumber,
+&quot;status&quot;: invoice.status,
+&quot;date&quot;: invoice.date
+]
+]" doc:name="Expression"/>
+    </sub-flow>    
+    <sub-flow name="xero-getSaleItems" doc:name="xero-getSaleItems">
+        <xero:get-items-list config-ref="Xero" whereClause="SalesDetails.UnitPrice >= 0" doc:name="Xero"/>
+        <message-filter doc:name="Drop Exceptions" onUnaccepted="droppedMessageFlow">
+            <expression-filter expression="#[xpath('/ApiException') == null]" />
+        </message-filter>        
+        <auto-transformer returnClass="au.com.sixtree.mule.modules.xero.xsd.ResponseType"></auto-transformer>
+        <expression-transformer expression="#[([
+&quot;code&quot;: $.code
+] in payload.items.item)]" doc:name="Expression"/>
+    </sub-flow>    
+    
+    <flow name="droppedMessageFlow" doc:name="droppedMessageFlow">
+    	<json:xml-to-json-transformer doc:name="XML to JSON"/>
+        <set-session-variable variableName="apiException" value="#[message.payload]" doc:name="Save API Exception"/>
+    </flow>
+    
+</mule>
