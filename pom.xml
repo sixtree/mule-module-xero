@@ -26,8 +26,8 @@
 	<url>http://github.com/sixtree/mule-module-xero</url>
 
 	<scm>
-		<connection>scm:git:git://github.com:sixtree/mule-module-xero.git</connection>
-		<developerConnection>scm:git:git@github.com:sixtree/mule-module-xero.git</developerConnection>
+		<connection>scm:git:https://github.com/sixtree/mule-module-xero.git</connection>
+		<developerConnection>scm:git:https://github.com/sixtree/mule-module-xero.git</developerConnection>
 		<url>http://github.com/sixtree/mule-module-xero</url>
 	</scm>
 
